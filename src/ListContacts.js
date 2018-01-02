@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import * as ContactsAPI from './utils/ContactsAPI'
 // contact-list is in index.css file
@@ -27,8 +28,14 @@ class ListContacts extends Component {
             value={this.state.query}
             onChange={(event) => this.updateQuery(event.target.value) }
           />
+         <Link
+         to="/create"
+         className="add-contact"
+        >Add Contact</Link>
+
+
         </div>
-       <ol className='contact-list'>
+              <ol className='contact-list'>
         {this.props.contacts.map((contact) => (
           <li key={contact.id} className='contact-list-item'>
            <div className='contact-avatar' style={{
